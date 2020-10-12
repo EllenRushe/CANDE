@@ -1,0 +1,1 @@
+{"model": "AE_FiLM_embed_64", "checkpoint_name": "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_film_embed_64/checkpoint_AE_FiLM_embed_64__iter_2_epoch_2996", "val_json": "logs/ae_film_embed_64/AE_FiLM_embed_64__2.json", "auc_scores": [0.9121061359867328, 0.8771544826955606, 0.8329486940049625]}

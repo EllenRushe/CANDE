@@ -1,0 +1,50 @@
+# Empty field value results in 'None' value in Python. 
+default: &DEFAULT
+  num_epochs: 1000
+  batch_size: 256
+
+
+
+MLP_32:
+  <<: *DEFAULT
+  model_name: mlp_32
+  dataset_class: "MNISTDataset"
+  data_dir: "mnist/semisupervised_all/train"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_32"
+  layer_name: "l4"
+  batch_size: 256
+  embedding_dir: "embeddings" 
+  gpu_vis_dev: '0'
+
+MLP_64:
+  <<: *DEFAULT
+  model_name: mlp_64
+  dataset_class: "MNISTDataset"
+  data_dir: "mnist/semisupervised_all/train"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_64"
+  layer_name: "l4"
+  batch_size: 256
+  embedding_dir: "embeddings"
+  gpu_vis_dev: '0'
+
+MLP_128:
+  <<: *DEFAULT
+  model_name: mlp_128
+  dataset_class: "MNISTDataset"
+  data_dir: "mnist/semisupervised_all/train"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_128"
+  layer_name: "l4"
+  batch_size: 256
+  embedding_dir: "embeddings"
+  gpu_vis_dev: '0'
+
+MLP_256:
+  <<: *DEFAULT
+  model_name: mlp_256
+  dataset_class: "MNISTDataset"
+  data_dir: "mnist/semisupervised_all/train"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_256"
+  layer_name: "l4"
+  batch_size: 256
+  embedding_dir: "embeddings"
+  gpu_vis_dev: '0'

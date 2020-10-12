@@ -1,0 +1,314 @@
+# Empty field value results in 'None' value in Python. 
+default: &DEFAULT
+  num_epochs: 1000
+  batch_size: 256
+
+AE:
+  <<: *DEFAULT
+  model_name: ae
+  data_dir: "mnist/semisupervised_sep"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae"
+  log_dir: 'logs/ae'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae"
+  context_embedding_file:
+  context_filename:
+  dataset_class: "MNISTDataset"
+  flatten: True
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+
+AE_all:
+  <<: *DEFAULT
+  model_name: ae
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_all"
+  log_dir: 'logs/ae_all'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae_all"
+  context_embedding_file:  
+  context_filename: 
+  dataset_class: "MNISTDataset"
+  flatten: True
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+AE_FiLM_one_hot:
+  <<: *DEFAULT
+  model_name: ae_film_one_hot
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_film_one_hot"
+  log_dir: 'logs/ae_film_one_hot'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae_film_one_hot"  
+  context_embedding_file:
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: True
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+AE_FiLM_embed_32:
+  <<: *DEFAULT
+  model_name: ae_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_film_embed_32"
+  log_dir: 'logs/ae_film_embed_32'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae_film_embed_32"  
+  context_embedding_file: "embeddings/checkpoint_MLP_32_epoch_50.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: True 
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+AE_FiLM_embed_64:
+  <<: *DEFAULT
+  model_name: ae_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_film_embed_64"
+  log_dir: 'logs/ae_film_embed_64'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae_film_embed_64"  
+  context_embedding_file: "embeddings/checkpoint_MLP_64_epoch_252.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: True 
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+AE_FiLM_embed_128:
+  <<: *DEFAULT
+  model_name: ae_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"  
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_film_embed_128"
+  log_dir: 'logs/ae_film_embed_128'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae_film_embed_128"  
+  context_embedding_file: "embeddings/checkpoint_MLP_128_epoch_47.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: True 
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+AE_FiLM_embed_256:
+  <<: *DEFAULT
+  model_name: ae_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/ae_film_embed_256"
+  log_dir: 'logs/ae_film_embed_256'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/ae_film_embed_256"
+  context_embedding_file: "embeddings/checkpoint_MLP_256_epoch_151.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: True 
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 3000
+  batch_size: 256
+  lr: 0.0001
+
+CAE2d:
+  <<: *DEFAULT
+  model_name: cae2d
+  data_dir: "mnist/semisupervised_sep"
+  eval_dir: "mnist/semisupervised_sep"  
+  checkpoint_dir: "checkpoints/cae2d"
+  log_dir: 'logs/cae2d'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d"  
+  context_embedding_file: 
+  context_filename: 
+  dataset_class: "MNISTDataset"
+  flatten: False
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+
+CAE2d_all:
+  <<: *DEFAULT
+  model_name: cae2d
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "checkpoints/cae2d_all"
+  log_dir: 'logs/cae2d_all'
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d_all"  
+  context_embedding_file: 
+  context_filename: 
+  dataset_class: "MNISTDataset"
+  flatten: False
+  cost: "mse" 
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+CAE2d_FiLM_one_hot:
+  <<: *DEFAULT
+  model_name: cae2d_film_one_hot
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "checkpoints/cae2d_film_one_hot"
+  log_dir: "logs/cae2d_film_one_hot"
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d_film_one_hot"  
+  context_embedding_file:
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: False
+  cost: "mse"
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+
+CAE2d_FiLM_embed_32:
+  <<: *DEFAULT
+  model_name: cae2d_film_embed
+  data_dir: "mnist/semisupervised_all"
+  checkpoint_dir: "checkpoints/cae2d_film_embed_32"
+  eval_dir: "mnist/semisupervised_sep"
+  log_dir: "logs/cae2d_film_embed_32"
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d_film_embed_32"  
+  context_embedding_file: "embeddings/checkpoint_MLP_32_epoch_1.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: False 
+  cost: 'mse'
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+CAE2d_FiLM_embed_64:
+  <<: *DEFAULT
+  model_name: cae2d_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "checkpoints/cae2d_film_embed_64"
+  log_dir: "logs/cae2d_film_embed_64"
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d_film_embed_64"  
+  context_embedding_file: "embeddings/checkpoint_MLP_64_epoch_1.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: False
+  cost: 'mse'
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+CAE2d_FiLM_embed_128:
+  <<: *DEFAULT
+  model_name: cae2d_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "checkpoints/cae2d_film_embed_128"
+  log_dir: "logs/cae2d_film_embed_128"
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d_film_embed_128"  
+  context_embedding_file: "embeddings/checkpoint_MLP_128_epoch_1.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: False
+  cost: 'mse'
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+CAE2d_FiLM_embed_256:
+  <<: *DEFAULT
+  model_name: cae2d_film_embed
+  data_dir: "mnist/semisupervised_all"
+  eval_dir: "mnist/semisupervised_sep"
+  checkpoint_dir: "checkpoints/cae2d_film_embed_256"
+  log_dir: "logs/cae2d_film_embed_256"
+  output_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/outputs/cae2d_film_embed_256"
+  context_embedding_file: "embeddings/checkpoint_MLP_256_epoch_1.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MNISTDataset"
+  flatten: False
+  cost: 'mse'
+  gpu_vis_dev: '0'
+  num_epochs: 2000
+  batch_size: 256
+  lr: 0.0001
+
+
+MLP_32:
+  <<: *DEFAULT
+  model_name: mlp_32
+  data_dir: "mnist/semisupervised_all"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_32"
+  log_dir: 'logs/mlp_32'
+  dataset_class: "MNISTDataset"
+  flatten: True
+  gpu_vis_dev: '0'
+  num_epochs: 300
+  batch_size: 256
+  lr: 0.0001
+
+MLP_64:
+  <<: *DEFAULT
+  model_name: mlp_64
+  data_dir: "mnist/semisupervised_all"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_64"
+  log_dir: 'logs/mlp_64'
+  dataset_class: "MNISTDataset"
+  flatten: True
+  gpu_vis_dev: '0'
+  num_epochs: 300
+  batch_size: 256
+  lr: 0.0001
+
+MLP_128:
+  <<: *DEFAULT
+  model_name: mlp_128
+  data_dir: "mnist/semisupervised_all"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_128"
+  log_dir: 'logs/mlp_128'
+  dataset_class: "MNISTDataset"
+  flatten: True
+  gpu_vis_dev: '0'
+  num_epochs: 300
+  batch_size: 256
+  lr: 0.0001
+
+MLP_256:
+  <<: *DEFAULT
+  model_name: mlp_256
+  data_dir: "mnist/semisupervised_all"
+  checkpoint_dir: "/home/people/12329741/scratch/machine_sound/mimii_baseline/image_context_net/checkpoints/mlp_256"
+  log_dir: 'logs/mlp_256'
+  dataset_class: "MNISTDataset"
+  flatten: True
+  gpu_vis_dev: '0'
+  num_epochs: 300
+  batch_size: 256
+  lr: 0.0001
+
+

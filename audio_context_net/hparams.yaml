@@ -1,0 +1,157 @@
+# Empty field value results in 'None' value in Python. 
+default: &DEFAULT
+  num_epochs: 1000
+  batch_size: 256
+
+
+AE_sound:
+  <<: *DEFAULT
+  model_name: ae_sound
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound"
+  log_dir: 'logs/ae_sound'
+  context_embedding_file:
+  context_filename: 
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+
+AE_sound_all:
+  <<: *DEFAULT
+  model_name: ae_sound
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound_all"
+  log_dir: 'logs/ae_sound_all'
+  context_embedding_file:
+  context_filename: 
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+AE_sound_FiLM_one_hot:
+  <<: *DEFAULT
+  model_name: ae_sound_film_one_hot
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound_film_one_hot"
+  log_dir: 'logs/ae_sound_film_one_hot'
+  context_embedding_file: 
+  context_filename: "contexts.npy"
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+AE_sound_FiLM_embed_32:
+  <<: *DEFAULT
+  model_name: ae_sound_film_embed
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound_film_embed_32"
+  log_dir: 'logs/ae_sound_film_embed_32'
+  context_embedding_file: "embeddings/checkpoint_MLP_sound_32_epoch_19.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+AE_sound_FiLM_embed_64:
+  <<: *DEFAULT
+  model_name: ae_sound_film_embed
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound_film_embed_64"
+  log_dir: 'logs/ae_sound_film_embed_64'
+  context_embedding_file: "embeddings/checkpoint_MLP_sound_64_epoch_20.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+AE_sound_FiLM_embed_128:
+  <<: *DEFAULT
+  model_name: ae_sound_film_embed
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound_film_embed_128"
+  log_dir: 'logs/ae_sound_film_embed_128'
+  context_embedding_file: "embeddings/checkpoint_MLP_sound_128_epoch_14.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+AE_sound_FiLM_embed_256:
+  <<: *DEFAULT
+  model_name: ae_sound_film_embed
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/ae_sound_film_embed_256"
+  log_dir: 'logs/ae_sound_film_embed_256'
+  context_embedding_file: "embeddings/checkpoint_MLP_sound_256_epoch_14.npy"
+  context_filename: "contexts.npy"
+  dataset_class: "MachineSoundDataset"
+  gpu_vis_dev: '0'
+  num_epochs: 100
+  batch_size: 256
+  lr: 0.0001
+
+MLP_sound_32:
+  <<: *DEFAULT
+  model_name: mlp_sound_32
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/mlp_sound_32"
+  log_dir: 'logs/mlp_sound_32'
+  dataset_class: "MachineSoundDataset"
+  context_filename: "contexts.npy"
+  gpu_vis_dev: '0'
+  num_epochs: 50
+  batch_size: 512
+  lr: 0.0001
+
+MLP_sound_64:
+  <<: *DEFAULT
+  model_name: mlp_sound_64
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/mlp_sound_64"
+  log_dir: 'logs/mlp_sound_64'
+  dataset_class: "MachineSoundDataset"
+  context_filename: "contexts.npy"
+  gpu_vis_dev: '0'
+  num_epochs: 50
+  batch_size: 512
+  lr: 0.0001
+
+MLP_sound_128:
+  <<: *DEFAULT
+  model_name: mlp_sound_128
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/mlp_sound_128"
+  log_dir: 'logs/mlp_sound_128'
+  dataset_class: "MachineSoundDataset"
+  context_filename: "contexts.npy"
+  gpu_vis_dev: '0'
+  num_epochs: 50
+  batch_size: 512
+  lr: 0.0001
+
+MLP_sound_256:
+  <<: *DEFAULT
+  model_name: mlp_sound_256
+  data_dir: "numpy_dataset"
+  checkpoint_dir: "checkpoints/mlp_sound_256"
+  log_dir: 'logs/mlp_sound_256'
+  dataset_class: "MachineSoundDataset"
+  context_filename: "contexts.npy"
+  gpu_vis_dev: '0'
+  num_epochs: 50
+  batch_size: 512
+  lr: 0.0001
+

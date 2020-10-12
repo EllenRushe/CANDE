@@ -1,0 +1,52 @@
+# Empty field value results in 'None' value in Python. 
+default: &DEFAULT
+  num_epochs: 1000
+  batch_size: 256
+
+
+
+MLP_sound_32:
+  <<: *DEFAULT
+  model_name: mlp_sound_32
+  dataset_class: "MachineSoundDataset"
+  data_dir: "numpy_dataset/train"
+  checkpoint_dir: "checkpoints/mlp_sound_32"
+  layer_name: "fc6"
+  embedding_dir: "embeddings" 
+  batch_size: 256
+  gpu_vis_dev: '0'
+
+MLP_sound_64:
+  <<: *DEFAULT
+  model_name: mlp_sound_64
+  dataset_class: "MachineSoundDataset"
+  data_dir: "numpy_dataset/train"
+  checkpoint_dir: "checkpoints/mlp_sound_64"
+  layer_name: "fc6"
+  embedding_dir: "embeddings"
+  batch_size: 256
+  gpu_vis_dev: '0'
+
+MLP_sound_128:
+  <<: *DEFAULT
+  model_name: mlp_sound_128
+  dataset_class: "MachineSoundDataset"
+  data_dir: "numpy_dataset/train"
+  checkpoint_dir: "checkpoints/mlp_sound_128"
+  layer_name: "fc6"
+  embedding_dir: "embeddings"
+  batch_size: 256
+  gpu_vis_dev: '0'
+
+MLP_sound_256:
+  <<: *DEFAULT
+  model_name: mlp_sound_256
+  dataset_class: "MachineSoundDataset"
+  data_dir: "numpy_dataset/train"
+  checkpoint_dir: "checkpoints/mlp_sound_256"
+  layer_name: "fc6"
+  embedding_dir: "embeddings"
+  batch_size: 256
+  gpu_vis_dev: '0'
+
+
